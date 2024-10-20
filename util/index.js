@@ -58,7 +58,7 @@ const guiaByChanel = async (nomeOfc, nome, logo, streamingUrl, type, font) => {
       logo,
       streamingUrl,
       type,
-      canalName,
+      canalName:'empty',
       font_programas:font,
       programas: []
     };
