@@ -14,6 +14,15 @@ const getCanaisProgramacao = async () => {
   return lista.filter(canal => canal !== null);;
 };
 
+app.get('/', async (req, res) => {
+  try {
+    res.json("hello word"); 
+  } catch (error) {
+    console.error('Erro ao obter dados:', error);
+    res.status(500).json({ error: 'Erro ao obter dados' });
+  }
+});
+
 app.get('/api/programacao', async (req, res) => {
   try {
     const canais = await getCanaisProgramacao();
