@@ -15,9 +15,6 @@ const guiaByChanel = async (nomeOfc, nome, logo, streamingUrl, type, font) => {
     // Selecionar o elemento com id="canal_header"
     const canalHeader = $('#canal_header');
 
-    // Extrair informações do canal
-    const backgroundColor = canalHeader.attr('style'); // Pega o estilo inline // Pega o conteúdo da logo
-    const programacaoText = canalHeader.find('span').text(); // Pega o texto "PROGRAMAÇÃO"
     const canalName = canalHeader.find('h1').text(); // Pega o nome do canal "Cinemax"
 
     // Criar um objeto para armazenar as informações
@@ -26,8 +23,6 @@ const guiaByChanel = async (nomeOfc, nome, logo, streamingUrl, type, font) => {
       logo,
       streamingUrl,
       type,
-      backgroundColor, // Adicionando a cor de fundo ao objeto
-      programacaoText,
       canalName,
       font_programas:font,
       programas: [] // Inicializa um array para os programas
@@ -63,7 +58,6 @@ const guiaByChanel = async (nomeOfc, nome, logo, streamingUrl, type, font) => {
       logo,
       streamingUrl,
       type,
-      programacaoText,
       canalName,
       font_programas:font,
       programas: []
