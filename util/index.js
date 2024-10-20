@@ -1,6 +1,5 @@
 import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
-import fs from 'fs'; // Importar o módulo File System
 import channels from '../listTv/index.js'; // Importa a lista de canais
 
 const guiaByChanel = async (nomeOfc, nome, logo, streamingUrl, type, font) => {
@@ -57,9 +56,21 @@ const guiaByChanel = async (nomeOfc, nome, logo, streamingUrl, type, font) => {
       }
     });
 
-    return canalInfo; // Retornar as informações do canal
+    return canalInfo;
 
   } catch (error) {
+    const canalInfo = {
+      nomeOfc,
+      logo,
+      streamingUrl,
+      type,
+      backgroundColor,
+      programacaoText,
+      canalName,
+      font_programas:font,
+      programas: []
+    };
+
     console.error('Erro ao buscar dados:', error);
     canalInfo.programas.push({
       horario:"empty",
