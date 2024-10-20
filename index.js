@@ -26,10 +26,14 @@ app.get('/', async (req, res) => {
 app.get('/api/programacao', async (req, res) => {
   try {
     const canais = await getCanaisProgramacao();
-    res.json(canais); 
+    res.json(canais);
   } catch (error) {
     console.error('Erro ao obter dados:', error);
-    res.status(500).json({ error: 'Erro ao obter dados' });
+    res.status(500).json({ 
+      error: 'Erro ao obter dados', 
+      message: error.message,
+      stack: error.stack // Inclua a stack trace para diagnósticos
+    });
   }
 });
 
