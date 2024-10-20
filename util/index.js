@@ -16,8 +16,7 @@ const guiaByChanel = async (nomeOfc, nome, logo, streamingUrl, type, font) => {
     const canalHeader = $('#canal_header');
 
     // Extrair informações do canal
-    const backgroundColor = canalHeader.attr('style'); // Pega o estilo inline
-    const logoCanal = canalHeader.find('.logo_canal').html(); // Pega o conteúdo da logo
+    const backgroundColor = canalHeader.attr('style'); // Pega o estilo inline // Pega o conteúdo da logo
     const programacaoText = canalHeader.find('span').text(); // Pega o texto "PROGRAMAÇÃO"
     const canalName = canalHeader.find('h1').text(); // Pega o nome do canal "Cinemax"
 
@@ -64,7 +63,6 @@ const guiaByChanel = async (nomeOfc, nome, logo, streamingUrl, type, font) => {
       logo,
       streamingUrl,
       type,
-      backgroundColor,
       programacaoText,
       canalName,
       font_programas:font,
