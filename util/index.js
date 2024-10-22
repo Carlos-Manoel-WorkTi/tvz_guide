@@ -1,6 +1,5 @@
 import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
-import channels from '../listTv/index.js'; // Importa a lista de canais
 
 const guiaByChanel = async (nomeOfc, nome, logo, streamingUrl, type, font) => {
   try {
